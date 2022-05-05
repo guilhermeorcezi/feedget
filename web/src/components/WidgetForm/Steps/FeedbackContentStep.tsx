@@ -1,27 +1,27 @@
 import { ArrowLeft  } from "phosphor-react";
 import { FormEvent, useCallback, useState } from "react";
 import { FeedbackType, feedbackTypes } from "..";
+import { useWidgetData } from "../../../context/WidgetDataContext";
 import { CloseButton } from "../../CloseButton";
-import { ScreenshotButton } from "./ScreenshotButton";
+import { ScreenshotButton } from "../../ScreenshotButton";
 
 interface FeedbackContentStepProps{
   feedbackType: FeedbackType;
-  onFeedbackRestartRequested: () => void;
+  onFeedbackChangeRequested: () => void;
   onFeedbackSent: () => void;
 }
 
 export function FeedbackContentStep({
   feedbackType,
-  onFeedbackRestartRequested,
+  onFeedbackChangeRequested,
   onFeedbackSent
 }: FeedbackContentStepProps) {
   const [screenshot, setScreenshot] = useState<string | null>(null);
-  const [comment, setComment] = useState<string | null>(null);
   const feedbackTypeInfo = feedbackTypes[feedbackType];
+  const { comment, setWidgetComment } = useWidgetData();
 
   const handleSubmitFeedback = useCallback((event: FormEvent) => {
     event.preventDefault();
-
     onFeedbackSent();
   },[]);
 
@@ -30,7 +30,7 @@ export function FeedbackContentStep({
       <header>
         <button
         type="button"
-        onClick={onFeedbackRestartRequested}
+        onClick={onFeedbackChangeRequested}
         className="top-5 left-5 absolute text-zinc-400 hover:text-zinc-100">
           <ArrowLeft weight="bold" className="w-4 h-4" />
         </button>
@@ -47,7 +47,8 @@ export function FeedbackContentStep({
         <textarea
           className="min-w-[304px] w-full min-h-[112px] text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 resize-none focus:outline-none scrollbar scrollbar-thumb-zinc-700 scrollbar-track-transparent scrollbar-thin"
           placeholder="Conte com detalhes o que está acontecendo..."
-          onChange={event => setComment(event.target.value)}
+          value={comment}
+          onChange={(event => setWidgetComment(event.target.value))}
         />
 
         <footer className="flex gap-2 mt-2">

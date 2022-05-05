@@ -7,6 +7,7 @@ import thoughtImageUrl from '../../assets/thought.svg';
 import { FeedbackTypeStep } from "./Steps/FeedbackTypeStep";
 import { FeedbackContentStep } from "./Steps/FeedbackContentStep";
 import { FeedbackSuccessStep } from "./Steps/FeedbackSuccessStep";
+import { useWidgetData } from "../../context/WidgetDataContext";
 
 export const feedbackTypes = {
   BUG: {
@@ -37,8 +38,15 @@ export type FeedbackType = keyof typeof feedbackTypes;
 export function WidgetForm() {
   const [feedbackType, setFeedbackType] = useState<FeedbackType | null>();
   const [feedbackSent, setFeedbackSent] = useState(false);
+  const { setWidgetComment } = useWidgetData();
 
   const handleRestartFeedback = useCallback(() => {
+    setFeedbackSent(false);
+    setFeedbackType(null);
+    setWidgetComment('');
+  },[])
+
+  const handleChangeFeedback = useCallback(() => {
     setFeedbackSent(false);
     setFeedbackType(null);
   },[])
@@ -54,7 +62,7 @@ export function WidgetForm() {
           ) : (
             <FeedbackContentStep
               feedbackType={feedbackType}
-              onFeedbackRestartRequested={handleRestartFeedback}
+              onFeedbackChangeRequested={handleChangeFeedback}
               onFeedbackSent={() => setFeedbackSent(true)}
             />
           )}
