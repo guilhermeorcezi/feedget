@@ -34,7 +34,7 @@ const Widget: React.FC = () => {
         backgroundStyle={styles.modal}
         handleIndicatorStyle={styles.indicator}
       >
-        <Success />
+        <Form feedbackType='BUG' />
       </BottomSheet>
     </>
   )
