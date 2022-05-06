@@ -6,6 +6,10 @@ import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
 import { styles, WidgetButton } from './styles';
 import { theme } from '../../theme';
 import { ChooseFeedback } from './Steps/ChooseFeedback';
+import { feedbackTypes } from '../../utils/feedbackTypes';
+import Form from './Steps/Form';
+
+export type FeedbackType = keyof typeof feedbackTypes;
 
 const Widget: React.FC = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
@@ -29,7 +33,7 @@ const Widget: React.FC = () => {
         backgroundStyle={styles.modal}
         handleIndicatorStyle={styles.indicator}
       >
-        <ChooseFeedback />
+        <Form feedbackType="BUG" />
       </BottomSheet>
     </>
   )
