@@ -8,6 +8,7 @@ import { theme } from '../../theme';
 import { ChooseFeedback } from './Steps/ChooseFeedback';
 import { feedbackTypes } from '../../utils/feedbackTypes';
 import Form from './Steps/Form';
+import Success from './Steps/Success';
 
 export type FeedbackType = keyof typeof feedbackTypes;
 
@@ -33,7 +34,7 @@ const Widget: React.FC = () => {
         backgroundStyle={styles.modal}
         handleIndicatorStyle={styles.indicator}
       >
-        <Form feedbackType="BUG" />
+        <Success />
       </BottomSheet>
     </>
   )
