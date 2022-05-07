@@ -1,5 +1,5 @@
 <h3 align="center">
-    <img alt="Feedget" width="600" height="300" title="#logo" src="./github_assets/banner.png">
+    <img alt="Feedget" width="600" height="400" title="#logo" src="./github_assets/banner.png">
     <br>
 </h3>
 <p align="center"> 🚀 <strong>FeedGet</strong> | Project developed on the 8th edition of Rocketseat's NLW.
