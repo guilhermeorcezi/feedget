@@ -34,7 +34,7 @@ export function Form({
   const [screenshot, setScreenshot] = useState<string | null>();
   const [isSendingFeedback, setIsSendingFeedback] = useState<boolean>(false);
   const feedbackTypeInfo = feedbackTypes[feedbackType];
-  const [comment, setComment] = useState<string>('oi');
+  const [comment, setComment] = useState<string>('');
 
   const handleTakeScreenshot = useCallback(() => {
     captureScreen({
@@ -54,7 +54,7 @@ export function Form({
     }
 
     setIsSendingFeedback(true);
-    const screenshotBase64 = screenshot && FileSystem.readAsStringAsync(
+    const screenshotBase64 = screenshot && await FileSystem.readAsStringAsync(
       screenshot, { encoding: 'base64' }
     );
 
@@ -69,6 +69,7 @@ export function Form({
       onFeedbackSent();
     }catch (error){
       console.log('error')
+      setIsSendingFeedback(false);
     }
   },[isSendingFeedback, feedbackType, comment]);
 
@@ -94,7 +95,6 @@ export function Form({
         placeholder="Algo não está funcionando bem? Queremos corrigir. Conte com detalhes o que está acontecendo"
         placeholderTextColor={theme.colors.text_secondary}
         autoCorrect={false}
-        value={comment}
         onChangeText={setComment}
       />
 
