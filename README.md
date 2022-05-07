@@ -47,9 +47,9 @@ The project was developed using the following technologies
 
 ### 💻 Web application running
 <center>
-    <div style="display: flex; width='100%' flex-direction: 'row'; align-items: 'center'; justify-content:'center">
+    <h3 align="center">
            <img src="./github_assets/use.gif" width="400px">
-    </div>
+    </h3>
 </center>
 
 <a id="#como-usar"></a>
