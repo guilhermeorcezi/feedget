@@ -45,7 +45,7 @@ The project was developed using the following technologies
 - [React Native](https://reactnative.dev/)
 - [Expo](https://expo.dev/)
 
-# 💻 Web application running
+## 💻 Web application running
 <center>
     <h3 align="center">
            <img src="./github_assets/use.gif" width="400px">
