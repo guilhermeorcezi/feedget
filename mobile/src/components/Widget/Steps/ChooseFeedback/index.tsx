@@ -1,4 +1,5 @@
 import React from 'react';
+import { FeedbackType } from '../..';
 import { feedbackTypes } from '../../../../utils/feedbackTypes';
 import { Footer } from '../../Footer';
 
@@ -7,15 +8,24 @@ import {
   Options,
   FeedbackOptionButton,
   FeedbackImage,
-  FeedbackTitle
+  FeedbackTitle,
+  Title
 } from './styles';
 
-export const ChooseFeedback: React.FC = () => {
+interface ChooseFeedbackProps{
+  onFeedbackTypeChanged: (feedbackType: FeedbackType) => void;
+}
+
+export function ChooseFeedback({ 
+  onFeedbackTypeChanged
+}: ChooseFeedbackProps){
+
   return (
   <Container>
+    <Title>Deixe seu feedback</Title>
     <Options>
       {Object.entries(feedbackTypes).map(([key,value]) => (
-        <FeedbackOptionButton key={key}>
+        <FeedbackOptionButton key={key} onPress={() => onFeedbackTypeChanged(key as FeedbackType)}>
           <FeedbackImage source={value.image} />
           <FeedbackTitle>{value.title}</FeedbackTitle>
         </FeedbackOptionButton>

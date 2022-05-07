@@ -15,5 +15,3 @@ export const Text = styled.Text`
   font-family: ${theme.fonts.medium};
   color: ${theme.colors.text_on_brand_color};
 `;
-
-export const Loading = styled.ActivityIndicator;

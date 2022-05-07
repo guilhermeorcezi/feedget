@@ -1,7 +1,7 @@
 import React from 'react';
-import { TouchableOpacityProps } from 'react-native';
+import { ActivityIndicator, TouchableOpacityProps } from 'react-native';
 import { theme } from '../../../theme';
-import { Container, Loading, Text } from './styles';
+import { Container, Text } from './styles';
 
 interface ButtonProps extends TouchableOpacityProps{
   isLoading: boolean;
@@ -11,7 +11,7 @@ export function Button({ isLoading, ...rest }: ButtonProps){
   return (
     <Container {...rest}>
       {isLoading ? (
-        <Loading
+        <ActivityIndicator
           color={theme.colors.text_on_brand_color}
         />
       ) : (

@@ -11,14 +11,20 @@ import {
   Text
   } from './styles';
 
-export function Success() {
+  interface SuccessProps{
+    onSendNewFeedback: () => void;
+  }
+
+export function Success({
+  onSendNewFeedback
+}: SuccessProps) {
   return (
     <Container>
       <SuccessImage source={successImg} />
 
       <Text>Agradecemos o feedback!</Text>
 
-      <Button>
+      <Button onPress={onSendNewFeedback}>
         <ButtonText>Quero enviar outro</ButtonText>
       </Button>
 
