@@ -1,5 +1,5 @@
 <h3 align="center">
-    <img alt="Feedget" width="800" title="#logo" src="./github_assets/banner.png">
+    <img alt="Feedget" width="600" height="300" title="#logo" src="./github_assets/banner.png">
     <br>
 </h3>
 <p align="center"> 🚀 <strong>FeedGet</strong> | Project developed on the 8th edition of Rocketseat's NLW.
@@ -39,11 +39,16 @@ The project was developed using the following technologies
 - [ReactJS](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Phosphor Icons](https://phosphoricons.com/)
-- [Headless Ui]https://headlessui.dev/)
+- [Headless Ui](https://headlessui.dev/)
 - [NodeJS](https://nodejs.org/en/)
 - [Prismic](https://prismic.io/)
 - [React Native](https://reactnative.dev/)
 - [Expo](https://expo.dev/)
+
+### Web application running
+<div style="display: flex; flex-direction: 'row'; align-items: 'center'; justify-content:'center">
+       <img src="./github_assets/use.gif" width="400px">
+</div>
 
 <a id="#como-usar"></a>
 ## :fire: How to run - React web application
