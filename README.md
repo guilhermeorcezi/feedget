@@ -45,10 +45,12 @@ The project was developed using the following technologies
 - [React Native](https://reactnative.dev/)
 - [Expo](https://expo.dev/)
 
-### Web application running
-<div style="display: flex; flex-direction: 'row'; align-items: 'center'; justify-content:'center">
-       <img src="./github_assets/use.gif" width="400px">
-</div>
+### 💻 Web application running
+<center>
+    <div style="display: flex; width='100%' flex-direction: 'row'; align-items: 'center'; justify-content:'center">
+           <img src="./github_assets/use.gif" width="400px">
+    </div>
+</center>
 
 <a id="#como-usar"></a>
 ## :fire: How to run - React web application
